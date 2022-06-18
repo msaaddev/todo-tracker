@@ -41,7 +41,7 @@
   transition: 0.3s all;
 }
 
-.todo-add button:hover {
+.todo-add button:hover, .todo-all-clear button:hover {
   box-shadow: 0 0px 10px rgba(5, 13, 33, 1);
 }
 
