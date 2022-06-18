@@ -4,15 +4,9 @@ import { action } from '@ember/object';
 
 export default class TodoComponent extends Component {
   @tracked newTodo = '';
-  @tracked todos = [
-    'delectus aut autem',
-    'quis ut nam facilis et officia qui',
-    'fugiat veniam minus',
-    'et porro tempora',
-    'laboriosam mollitia et enim quasi adipisci quia provident illum',
-    'qui ullam ratione quibusdam voluptatem quia omnis',
-    'illo expedita consequatur quia in',
-  ];
+  @tracked todos = localStorage.getItem('todos')
+    ? JSON.parse(localStorage.getItem('todos'))
+    : [];
 
   get todoList() {
     return this.todos;
@@ -21,13 +15,16 @@ export default class TodoComponent extends Component {
   @action createTodo(e) {
     e.preventDefault();
     this.todos = this.todos.concat(this.newTodo);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
   @action deleteTodo(todo) {
     this.todos = this.todos.filter((item) => item !== todo);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
   @action clearAll() {
     this.todos = [];
+    localStorage.removeItem('todos', JSON.stringify(this.todos));
   }
 }
