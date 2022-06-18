@@ -1,0 +1,13 @@
+<div class='todo-container'>
+  <form class='todo-add'>
+    <Input placeholder='Write a todo...' autofocus />
+    <button>Add Todo</button>
+  </form>
+  <div class='todo-list'>
+    <ul>
+      {{#each @todos as |todo|}}
+        <li>{{todo.title}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+/* styles */
+
+.todo-container {
+  margin: 10px 30px 10px 30px;
+}
+
+.todo-add {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.todo-add input {
+	width: 230px;
+	border: solid 1px rgba(5, 13, 33, 1);
+	outline: none;
+	font-size: 19px;
+	padding: 10px;
+	background: rgba(225, 237, 248, 0.6);
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+.todo-add button {
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  width: 100px;
+  padding: 11px 0;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 3px;
+  background: radial-gradient(
+    ellipse at right top,
+    rgba(5, 13, 33, 0.9) 0%,
+    rgba(5, 13, 33, 1) 100%
+  );
+  box-shadow: 0 5px 10px rgba(5, 13, 33, 1);
+  transition: 0.5s all;
+}
+
+.todo-add button:hover {
+  box-shadow: 0 0px 10px rgba(5, 13, 33, 1);
+}
+
+.todo-list ul li {
+  padding: 5px 0;
+  font-weight: 300;
+}
