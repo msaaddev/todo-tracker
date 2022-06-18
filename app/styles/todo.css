@@ -11,7 +11,7 @@
 }
 
 .todo-add input {
-	width: 230px;
+	width: 280px;
 	border: solid 1px rgba(5, 13, 33, 1);
 	outline: none;
 	font-size: 19px;
@@ -21,7 +21,7 @@
 	font-size: 14px;
 }
 
-.todo-add button {
+.todo-add button, .todo-all-clear button {
   margin-left: 10px;
   outline: none;
   border: none;
@@ -38,14 +38,46 @@
     rgba(5, 13, 33, 1) 100%
   );
   box-shadow: 0 5px 10px rgba(5, 13, 33, 1);
-  transition: 0.5s all;
+  transition: 0.3s all;
 }
 
 .todo-add button:hover {
   box-shadow: 0 0px 10px rgba(5, 13, 33, 1);
 }
 
-.todo-list ul li {
-  padding: 5px 0;
+.todo-list {
+  height: 350px;
+  overflow-y: scroll;
+  border: solid 1px rgba(5, 13, 33, 1);
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item li {
+  padding: 7px 0;
   font-weight: 300;
+  position: relative;
+
+}
+
+.todo-item img {
+  padding-top: 10px;
+  width: 4%;
+  height: 4%;
+  margin: 0 20px 0 10px;
+  cursor: pointer;
+}
+
+.todo-all-clear {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.todo-all-clear button {
+  width: 100%;
+  margin: 0;
 }

@@ -1,13 +1,23 @@
 <div class='todo-container'>
   <form class='todo-add'>
-    <Input placeholder='Write a todo...' autofocus />
-    <button>Add Todo</button>
+    <Input placeholder='Write a todo...' autofocus @value={{this.newTodo}} />
+    <button {{on 'click' this.createTodo}}>Add Todo</button>
   </form>
   <div class='todo-list'>
     <ul>
-      {{#each @todos as |todo|}}
-        <li>{{todo.title}}</li>
+      {{#each this.todoList as |todo|}}
+        <div class='todo-item'>
+          <li>{{todo}}</li>
+          <img
+            src='assets/images/cancel.png'
+            alt='cancel'
+            {{on 'click' (fn this.deleteTodo todo)}}
+          />
+        </div>
       {{/each}}
     </ul>
+  </div>
+  <div class='todo-all-clear'>
+    <button {{on 'click' this.clearAll}}>Clear all</button>
   </div>
 </div>
