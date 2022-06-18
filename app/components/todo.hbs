@@ -1,7 +1,7 @@
 <div class='todo-container'>
   <form class='todo-add'>
-    <Input placeholder='Write a todo...' autofocus @value={{this.newTodo}} />
-    <button {{on 'click' this.createTodo}}>Add Todo</button>
+    <Input placeholder='Write a todo...' @value={{this.newTodo}} />
+    <button type="submit" {{on 'click' this.createTodo}}>Add Todo</button>
   </form>
   <div class='todo-list'>
     <ul>
@@ -18,6 +18,6 @@
     </ul>
   </div>
   <div class='todo-all-clear'>
-    <button {{on 'click' this.clearAll}}>Clear all</button>
+    <button type="button" {{on 'click' this.clearAll}}>Clear all</button>
   </div>
 </div>
